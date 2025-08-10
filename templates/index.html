@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Beyond the Veil of Wellness{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative overflow-hidden">
+    <div class="hero-background"></div>
+    <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content animate-fade-up">
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        WELCOME TO <span class="text-warning">ANIMAL HEALTH</span> CLASSIFICATION
+                    </h1>
+                    <p class="lead text-white-75 mb-5">
+                        We are a team of talented Machine Learning experts classifying Animal Health State whether critical or normal.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('predict_page') }}" class="btn btn-warning btn-lg px-4 me-3 animate-pulse">
+                            <i class="fas fa-stethoscope me-2"></i>GET STARTED
+                        </a>
+                        <a href="#what-we-do" class="btn btn-outline-light btn-lg px-4">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image animate-float">
+                    <img src="https://images.unsplash.com/photo-1559190394-df5a28aab5c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Veterinarian with animals" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <a href="#what-we-do" class="text-white">
+            <i class="fas fa-chevron-down fa-2x animate-bounce"></i>
+        </a>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section id="what-we-do" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-4 fw-bold text-primary mb-4">What we do here?</h2>
+                <p class="lead text-muted">
+                    Our advanced machine learning system analyzes various health parameters to provide accurate animal health assessments
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4 text-center">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-brain fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">AI-Powered Analysis</h4>
+                    <p class="text-muted">
+                        Leveraging advanced machine learning algorithms to analyze multiple health parameters and provide accurate predictions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4 text-center">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-heartbeat fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Health Monitoring</h4>
+                    <p class="text-muted">
+                        Comprehensive health status evaluation covering blood, brain, appearance, general, lung, and abdominal conditions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4 text-center">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-clock fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Early Detection</h4>
+                    <p class="text-muted">
+                        Early identification of potential health issues to enable proactive treatment and better outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-4 fw-bold text-primary mb-4">How It Works</h2>
+                <p class="lead text-muted">
+                    Simple steps to get your animal's health assessment
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Veterinarian examining pet" class="img-fluid rounded-3 shadow">
+            </div>
+            <div class="col-md-6">
+                <div class="process-steps">
+                    <div class="process-step mb-4">
+                        <div class="d-flex align-items-start">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                                1
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Select Animal Type</h5>
+                                <p class="text-muted mb-0">Choose from various animal categories including dogs, cats, birds, and livestock.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step mb-4">
+                        <div class="d-flex align-items-start">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                                2
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Input Health Parameters</h5>
+                                <p class="text-muted mb-0">Provide information about various health conditions and symptoms observed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="d-flex align-items-start">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                                3
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Get Instant Results</h5>
+                                <p class="text-muted mb-0">Receive immediate health classification with recommendations for next steps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2 counter" data-count="95">0</h2>
+                    <p class="mb-0">Accuracy Rate</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2 counter" data-count="1000">0</h2>
+                    <p class="mb-0">Animals Analyzed</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2 counter" data-count="8">0</h2>
+                    <p class="mb-0">Animal Types</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <h2 class="display-4 fw-bold mb-2 counter" data-count="24">0</h2>
+                    <p class="mb-0">Hours Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-4 fw-bold text-primary mb-4">Ready to Check Your Animal's Health?</h2>
+                <p class="lead text-muted mb-5">
+                    Get started with our AI-powered health classification system today and ensure your animals receive the best care possible.
+                </p>
+                <a href="{{ url_for('predict_page') }}" class="btn btn-primary btn-lg px-5">
+                    <i class="fas fa-stethoscope me-2"></i>Let's Check Health Status
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        
+        const inc = target / speed;
+        
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 1);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    
+    // Trigger animation when element is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCount();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    observer.observe(counter);
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}Health Check - Beyond the Veil of Wellness{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<section class="breadcrumb-section py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Inner Page</li>
+                    </ol>
+                </nav>
+                <h1 class="h3 mt-2 mb-0 text-primary fw-bold">Animal Health Status Check</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Form Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-container bg-white rounded-4 shadow-lg p-5">
+                    <div class="text-center mb-5">
+                        <div class="form-icon mb-3">
+                            <i class="fas fa-stethoscope fa-3x text-primary"></i>
+                        </div>
+                        <h2 class="fw-bold text-primary mb-3">Enter your Details for Animal Health Status Check</h2>
+                        <p class="text-muted">Please provide accurate information for the best prediction results</p>
+                    </div>
+                    
+                    <form action="{{ url_for('submit') }}" method="POST" class="needs-validation" novalidate>
+                        <!-- Animal Name -->
+                        <div class="form-group mb-4">
+                            <label for="animal_name" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-paw me-2 text-primary"></i>Animal Name
+                            </label>
+                            <select class="form-select form-select-lg" id="animal_name" name="animal_name" required>
+                                <option value="">Select Animal Type</option>
+                                {% for animal in animal_options %}
+                                    <option value="{{ animal }}">{{ animal }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select an animal type.</div>
+                        </div>
+
+                        <!-- Blood Brain Disease -->
+                        <div class="form-group mb-4">
+                            <label for="blood_brain_disease" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-brain me-2 text-primary"></i>Blood Brain Disease
+                            </label>
+                            <select class="form-select form-select-lg" id="blood_brain_disease" name="blood_brain_disease" required>
+                                <option value="">Select Condition</option>
+                                {% for condition in disease_options.blood_brain %}
+                                    <option value="{{ condition }}">{{ condition.replace('_', ' ').title() }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select a blood/brain condition.</div>
+                        </div>
+
+                        <!-- Appearance Disease -->
+                        <div class="form-group mb-4">
+                            <label for="appearance_disease" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-eye me-2 text-primary"></i>Appearance Disease
+                            </label>
+                            <select class="form-select form-select-lg" id="appearance_disease" name="appearance_disease" required>
+                                <option value="">Select Condition</option>
+                                {% for condition in disease_options.appearance %}
+                                    <option value="{{ condition }}">{{ condition.replace('_', ' ').title() }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select an appearance condition.</div>
+                        </div>
+
+                        <!-- General Disease -->
+                        <div class="form-group mb-4">
+                            <label for="general_disease" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-thermometer-half me-2 text-primary"></i>General Disease
+                            </label>
+                            <select class="form-select form-select-lg" id="general_disease" name="general_disease" required>
+                                <option value="">Select Condition</option>
+                                {% for condition in disease_options.general %}
+                                    <option value="{{ condition }}">{{ condition.replace('_', ' ').title() }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select a general condition.</div>
+                        </div>
+
+                        <!-- Lung Disease -->
+                        <div class="form-group mb-4">
+                            <label for="lung_disease" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-lungs me-2 text-primary"></i>Lung Disease
+                            </label>
+                            <select class="form-select form-select-lg" id="lung_disease" name="lung_disease" required>
+                                <option value="">Select Condition</option>
+                                {% for condition in disease_options.lung %}
+                                    <option value="{{ condition }}">{{ condition.replace('_', ' ').title() }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select a lung condition.</div>
+                        </div>
+
+                        <!-- Abdominal Disease -->
+                        <div class="form-group mb-5">
+                            <label for="abdominal_disease" class="form-label fw-semibold text-dark">
+                                <i class="fas fa-stomach me-2 text-primary"></i>Abdominal Disease
+                            </label>
+                            <select class="form-select form-select-lg" id="abdominal_disease" name="abdominal_disease" required>
+                                <option value="">Select Condition</option>
+                                {% for condition in disease_options.abdominal %}
+                                    <option value="{{ condition }}">{{ condition.replace('_', ' ').title() }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">Please select an abdominal condition.</div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5 py-3 submit-btn">
+                                <i class="fas fa-search me-2"></i>
+                                <span class="btn-text">Analyze Health Status</span>
+                                <span class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-3">Professional Veterinary AI Assistant</h3>
+                <p class="mb-4">
+                    Our machine learning model has been trained on extensive animal health data to provide accurate health status predictions. 
+                    While this tool provides valuable insights, it should complement, not replace, professional veterinary care.
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle me-2"></i>95% Accuracy Rate</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Multiple Animal Types Supported</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Instant Results</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Evidence-Based Recommendations</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Veterinarian with technology" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Form validation
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    // Show loading state
+                    const submitBtn = form.querySelector('.submit-btn');
+                    const btnText = submitBtn.querySelector('.btn-text');
+                    const spinner = submitBtn.querySelector('.spinner-border');
+                    
+                    btnText.textContent = 'Analyzing...';
+                    spinner.classList.remove('d-none');
+                    submitBtn.disabled = true;
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+// Enhanced select styling
+document.querySelectorAll('.form-select').forEach(select => {
+    select.addEventListener('change', function() {
+        if (this.value) {
+            this.classList.add('has-value');
+        } else {
+            this.classList.remove('has-value');
+        }
+    });
+});
+</script>
+{% endblock %}
