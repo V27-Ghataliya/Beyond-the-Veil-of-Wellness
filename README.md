@@ -244,17 +244,10 @@ Parameters:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ### 👨‍💻 Developer
 
 **VIRAL GHATALIYA**
 - 🔗 LinkedIn: [linkedin.com/in/viral-ghataliya](https://linkedin.com/in/viral-ghataliya)
-- 🐙 GitHub: [github.com/viralghataliya](https://github.com/viralghataliya)
-- 📧 Email: contact@example.com
-- 📱 Phone: +91 78453 23860
 
 ### 🙏 Acknowledgments
 
@@ -262,28 +255,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Open-source community for tools and libraries
 - Animal health research for training data insights
 
-### 🔮 Future Enhancements
-
-- [ ] Integration with IoT sensors for real-time monitoring
-- [ ] Mobile application development
-- [ ] Advanced AI models (Deep Learning, Neural Networks)
-- [ ] Multi-language support
-- [ ] Veterinary clinic management features
-- [ ] Telemedicine integration
-- [ ] Historical health tracking and analytics
-
-### 📞 Support
-
-For technical support or questions:
-- 📧 Email: contact@example.com
-- 📱 Phone: +91 78453 23860
-- 🌐 Website: [Your Website URL]
-
-### ⚠️ Disclaimer
-
-This tool provides AI-based predictions for informational purposes only. Always consult with a qualified veterinarian for proper diagnosis and treatment. This system is designed to assist, not replace, professional veterinary care.
-
----
-
-**© 2024 Beyond the Veil of Wellness. All rights reserved.**
 *Owned by VIRAL GHATALIYA*
